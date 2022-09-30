@@ -6,7 +6,7 @@ public class TrueFalseQuestion implements QuestionInterface{
 
     public TrueFalseQuestion(String inputQuestion) {
         question = inputQuestion;
-        System.out.println("\n" + question);
+        System.out.println(question);
     }
 
     public String getQuestion()
