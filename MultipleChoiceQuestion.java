@@ -1,4 +1,4 @@
-public class MultipleChoiceQuestion implements Question{
+public class MultipleChoiceQuestion implements QuestionInterface{
     private String question;
     private String choice1;
     private String choice2;
@@ -8,6 +8,7 @@ public class MultipleChoiceQuestion implements Question{
 
     public MultipleChoiceQuestion(String inputQuestion) {
         question = inputQuestion;
+        System.out.println("\n" + inputQuestion);
     }
 
     public String getQuestion()
@@ -15,21 +16,22 @@ public class MultipleChoiceQuestion implements Question{
         return question;
     }
 
-    public void setChoice(String inputAnswer, int choiceNum)
+    public void setChoice(String inputChoice, int choiceNum)
     {
         if (choiceNum == 1)
-            choice1 = inputAnswer;
+            choice1 = inputChoice;
         else if (choiceNum == 2)
-            choice2 = inputAnswer;
+            choice2 = inputChoice;
         else if (choiceNum == 3)
-            choice3 = inputAnswer;
+            choice3 = inputChoice;
         else if (choiceNum == 4)
-            choice4 = inputAnswer;
+            choice4 = inputChoice;
         else
         {
             System.out.println("Choice number is not in range");
             System.exit(0);
         }
+        System.out.println(choiceNum + ". " + inputChoice);
     }
 
     public String getChoice(int choiceNum)

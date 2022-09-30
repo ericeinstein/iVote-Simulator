@@ -1,4 +1,4 @@
-public class TrueFalseQuestion implements Question{
+public class TrueFalseQuestion implements QuestionInterface{
     private String question;
     private String choiceTrue;
     private String choiceFalse;
@@ -6,6 +6,7 @@ public class TrueFalseQuestion implements Question{
 
     public TrueFalseQuestion(String inputQuestion) {
         question = inputQuestion;
+        System.out.println("\n" + question);
     }
 
     public String getQuestion()
@@ -13,17 +14,18 @@ public class TrueFalseQuestion implements Question{
         return question;
     }
 
-    public void setChoice(String inputAnswer, int choiceNum)
+    public void setChoice(String inputChoice, int choiceNum)
     {
         if (choiceNum == 1)
-            choiceTrue = inputAnswer;
+            choiceTrue = inputChoice;
         else if (choiceNum == 2)
-            choiceFalse = inputAnswer;
+            choiceFalse = inputChoice;
         else
         {
             System.out.println("Choice number is not in range");
             System.exit(0);
         }
+        System.out.println(choiceNum + ". " + inputChoice);
     }
 
     public String getChoice(int choiceNum)
