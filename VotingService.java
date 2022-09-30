@@ -14,7 +14,7 @@ public class VotingService {
             int numChoice2 = rand.nextInt(length - numChoice1);
             int numChoice3 = rand.nextInt(length - (numChoice1 + numChoice2));
             int numChoice4 = length - (numChoice1 + numChoice2 + numChoice3);
-            System.out.println(numChoice1 + " students chose 1");
+            System.out.println("\n" + numChoice1 + " students chose 1");
             System.out.println(numChoice2 + " students chose 2");
             System.out.println(numChoice3 + " students chose 3");
             System.out.println(numChoice4 + " students chose 4");
@@ -24,7 +24,7 @@ public class VotingService {
         {
             int numChoice1 = rand.nextInt(length);
             int numChoice2 = length - numChoice1;
-            System.out.println(numChoice1 + " students chose 1");
+            System.out.println("\n" + numChoice1 + " students chose 1");
             System.out.println(numChoice2 + " students chose 2");
         }
 
