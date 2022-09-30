@@ -10,7 +10,8 @@ public class SimulatorDriver {
         Student[] studentArray = new Student[numOfStudents];
         for (int i = 0 ; i < numOfStudents ; i++)
             studentArray[i] = new Student();
-        System.out.println("Number of students in this class: " + studentArray.length);
+        System.out.println("\nWelcome to Student Trivia!");
+        System.out.println("\nNumber of students in this class: " + studentArray.length);
         
 
         //creates 2 multiple choice questions and 2 true/false questions
@@ -19,6 +20,7 @@ public class SimulatorDriver {
         new java.util.TimerTask() {
             @Override
             public void run() {
+                System.out.println("\nFirst Question!");
                 MultipleChoiceQuestion question1 = new MultipleChoiceQuestion("Who was the second President of the United States?");
                 question1.setChoice("Andrew Jackson", 1);
                 question1.setChoice("Thomas Jefferson", 2);
@@ -34,12 +36,12 @@ public class SimulatorDriver {
                         t0a.cancel();
                     }
                 }, 
-                1000
+                3000
                 );
                 t0.cancel();
             }
         }, 
-        1000
+        2000
         );
 
         Timer t1 = new java.util.Timer();
@@ -47,6 +49,7 @@ public class SimulatorDriver {
         new java.util.TimerTask() {
             @Override
             public void run() {
+                System.out.println("\nSecond Question!");
                 MultipleChoiceQuestion question2 = new MultipleChoiceQuestion("What year was Cal Poly Pomona established?");
                 question2.setChoice("1938", 1);
                 question2.setChoice("1967", 2);
@@ -62,12 +65,12 @@ public class SimulatorDriver {
                         t1a.cancel();
                     }
                 }, 
-                1000
+                3000
                 );
                 t1.cancel();
             }
         }, 
-        4000
+        7000
         );
 
 
@@ -76,6 +79,7 @@ public class SimulatorDriver {
         new java.util.TimerTask() {
             @Override
             public void run() {
+                System.out.println("\nThird Question!");
                 TrueFalseQuestion question3 = new TrueFalseQuestion("It takes a sloth two weeks to digest a meal. (True/False)");
                 question3.setChoice("True", 1);
                 question3.setChoice("False", 2);
@@ -89,12 +93,12 @@ public class SimulatorDriver {
                         t2a.cancel();
                     }
                 }, 
-                1000
+                3000
                 );
                 t2.cancel();
             }
         }, 
-        7000
+        12000
         );
 
 
@@ -103,6 +107,7 @@ public class SimulatorDriver {
         new java.util.TimerTask() {
             @Override
             public void run() {
+                System.out.println("\nFourth Question!");
                 TrueFalseQuestion question3 = new TrueFalseQuestion("Ants can lift 5000 times their body weight. (True/False)");
                 question3.setChoice("True", 1);
                 question3.setChoice("False", 2);
@@ -113,15 +118,16 @@ public class SimulatorDriver {
                     @Override
                     public void run() {
                         VotingService.collectAnswers(studentArray, 2);
+                        System.out.println("Finished!");
                         t3a.cancel();
                     }
                 }, 
-                1000
+                3000
                 );
                 t3.cancel();
             }
         }, 
-        10000 
+        17000 
         );
     }
 }

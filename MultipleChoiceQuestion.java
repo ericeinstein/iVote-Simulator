@@ -8,7 +8,7 @@ public class MultipleChoiceQuestion implements QuestionInterface{
 
     public MultipleChoiceQuestion(String inputQuestion) {
         question = inputQuestion;
-        System.out.println("\n" + inputQuestion);
+        System.out.println(inputQuestion);
     }
 
     public String getQuestion()
