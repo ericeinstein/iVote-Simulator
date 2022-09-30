@@ -1,4 +1,4 @@
-interface Question {
+interface QuestionInterface {
     public String getQuestion();
 
     public void setChoice(String inputAnswer, int choiceNum);
